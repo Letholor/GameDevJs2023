@@ -1,33 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
-[System.Serializable]
-public enum PotionType
-{
-    None,
-    Health,
-    Mana,
-    Strength,
-    Speed
-}
-
-[System.Serializable]
-public struct PotionTypeToSprite
-{
-    public PotionType potionType;
-    public Sprite sprite;
-}
+using System.Linq;
+using System;
 
 public class Character : MonoBehaviour
 {
     public int slotIndex;
-    public PotionType desiredPotionType;
+    public PotionType[] desiredPotionTypes;
 
-    public List<PotionTypeToSprite> potionTypeToSprites = new List<PotionTypeToSprite>();
-
+    SpriteRenderer thoughtRenderer;
     public SpriteRenderer thoughtBubbleRenderer;
+
+    public GameObject _potionGeneric;
+    public GameObject shelf;
+
+    List<PotionType> FulfilledPotions = new List<PotionType>();
 
     void Start()
     {
@@ -36,32 +24,62 @@ public class Character : MonoBehaviour
 
     void OnMouseDown()
     {
-        SpawnManager spawnManager = FindObjectOfType<SpawnManager>();
-        spawnManager.RemoveCharacter(slotIndex);
-        Destroy(gameObject);
+        List<PotionType> unFulfilledPotions = new List<PotionType>();
+        foreach (PotionType potType in desiredPotionTypes)
+        {
+            if (!FulfilledPotions.Contains(potType))
+            {
+                unFulfilledPotions.Add(potType);
+            }
+        }
+
+        foreach (PotionType potType in unFulfilledPotions)
+        {
+            int numPotionsNeeded = unFulfilledPotions.Count(potionType => potionType == potType);
+            int numPotionsToRemove = Math.Min(numPotionsNeeded, DeliverPotion.Instance.readyPotions.Count(potionType => potionType == potType));
+
+            for (int i = 0; i < numPotionsToRemove; i++)
+            {
+                DeliverPotion.Instance.readyPotions.Remove(potType);
+                FulfilledPotions.Add(potType);
+            }
+        }
+
+        if (unFulfilledPotions.Except(FulfilledPotions).Count() == 0)
+        {
+            SpawnManager spawnManager = FindObjectOfType<SpawnManager>();
+            spawnManager.RemoveCharacter(slotIndex);
+            Destroy(gameObject);
+        }
     }
 
-    public void SetDesiredPotionType(PotionType potionType)
+    public void SetDesiredPotionType(PotionType[] potionType)
     {
         // Set the desired potion type and update the thought bubble sprite
-        desiredPotionType = potionType;
+        desiredPotionTypes = potionType;
         UpdateThoughtBubbleSprite();
     }
 
     private void UpdateThoughtBubbleSprite()
     {
-        // Find the corresponding sprite for the desired potion type
-        foreach (PotionTypeToSprite potionTypeToSprite in potionTypeToSprites)
+        foreach (PotionType potType in desiredPotionTypes)
         {
-            if (potionTypeToSprite.potionType == desiredPotionType)
+            Vector2 vec = thoughtBubbleRenderer.size;
+            vec.y += 8;
+            thoughtBubbleRenderer.size = vec;
+
+            GameObject potionDesire = Instantiate(_potionGeneric);
+            potionDesire.transform.parent = shelf.transform;
+
+            foreach (PotionTypeToSprite potionTypeToSprite in DeliverPotion.Instance.potionTypeToSprites)
             {
-                thoughtBubbleRenderer.sprite = potionTypeToSprite.sprite;
-                thoughtBubbleRenderer.gameObject.SetActive(true);
-                return;
+                if (potionTypeToSprite.potionType == potType)
+                {
+                    thoughtRenderer = potionDesire.GetComponent<SpriteRenderer>();
+                    thoughtRenderer.sprite = potionTypeToSprite.sprite;
+                    thoughtRenderer.gameObject.SetActive(true);
+                }
             }
         }
-
-        // If no corresponding sprite is found, hide the thought bubble
-        thoughtBubbleRenderer.gameObject.SetActive(false);
     }
 }
