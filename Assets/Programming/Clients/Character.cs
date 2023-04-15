@@ -7,6 +7,7 @@ using System;
 public class Character : MonoBehaviour
 {
     public int slotIndex;
+    public int pay;
     public PotionType[] desiredPotionTypes;
 
     SpriteRenderer thoughtRenderer;
@@ -69,8 +70,8 @@ public class Character : MonoBehaviour
 
         if (allPotionsFulfilled)
         {
-            SpawnManager spawnManager = FindObjectOfType<SpawnManager>();
-            spawnManager.RemoveCharacter(slotIndex);
+            ScoreManager.instance.AddScore(pay);
+            SpawnManager.instance.RemoveCharacter(slotIndex);
             Destroy(gameObject);
         }
     }
@@ -86,6 +87,10 @@ public class Character : MonoBehaviour
     {
         foreach (PotionType potType in desiredPotionTypes)
         {
+            //change base pay amount
+            pay += 6;
+
+            //change thought bubble size
             Vector2 vec = thoughtBubbleRenderer.size;
             vec.y += 8;
             thoughtBubbleRenderer.size = vec;
