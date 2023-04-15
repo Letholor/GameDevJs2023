@@ -17,6 +17,7 @@ public struct PotionTypeToSprite
 {
     public PotionType potionType;
     public Sprite sprite;
+    public List<Ingredient> recipy;
 }
 
 public class DeliverPotion : Singleton<DeliverPotion>

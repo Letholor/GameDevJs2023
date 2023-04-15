@@ -1,32 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PotionMaster : MonoBehaviour
+public class PotionMaster : Singleton<PotionMaster>
 {
-    public Rigidbody2D potionRb;
-    public BoxCollider2D potionCollider;
-    [SerializeField] private Color colorOfPotion;
-    [SerializeField] private int potionTier;
-    [SerializeField] private bool mixablePotion;
+    public Button[] ingredientButtons;
+    public Image resultImage;
+    public Text resultText;
 
-    void Awake()
+    private List<Ingredient> currentIngredients = new List<Ingredient>();
+    private PotionType currentPotion;
+
+    public void AddIngredient(Ingredient ingredient)
     {
-        potionRb = GetComponent<Rigidbody2D>();
-        potionCollider = GetComponent<BoxCollider2D>();
+        currentIngredients.Add(ingredient);
+
+        currentPotion = GetPotionFromIngredients(currentIngredients);
     }
 
-    private void Update()
+    private PotionType GetPotionFromIngredients(List<Ingredient> ingredients)
     {
-        if (potionTier == 4) { mixablePotion = false; }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if(mixablePotion)
+        foreach (PotionTypeToSprite potion in DeliverPotion.instance.potionTypeToSprites)
         {
-            Debug.Log("Combining " + this.name + " and " + collider.name);
+            if (potion.recipy.Count == ingredients.Count)
+            {
+                bool ingredientsMatch = true;
+                foreach (Ingredient ingredient in ingredients)
+                {
+                    if (!potion.recipy.Contains(ingredient))
+                    {
+                        ingredientsMatch = false;
+                        break;
+                    }
+                }
+                if (ingredientsMatch)
+                {
+                    return potion.potionType;
+                }
+            }
+        }
+        return PotionType.None;
+    }
+
+    public void MixPotion()
+    {
+        if (currentIngredients.Count != 0)
+        {
+            if (currentPotion != PotionType.None)
+            {
+                DeliverPotion.instance.readyPotions.Add(currentPotion);
+                currentIngredients.Clear();
+            }
+            else
+            {
+                //explode
+                currentIngredients.Clear();
+            }
+            currentPotion = PotionType.None;
         }
     }
 
+    public void Dump()
+    {
+        currentIngredients.Clear();
+        currentPotion = PotionType.None;
+    }
 }
