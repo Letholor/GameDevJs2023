@@ -7,6 +7,7 @@ using System;
 public class Character : MonoBehaviour
 {
     public int slotIndex;
+    public int pay;
     public PotionType[] desiredPotionTypes;
 
     SpriteRenderer thoughtRenderer;
@@ -24,10 +25,18 @@ public class Character : MonoBehaviour
 
     void OnMouseDown()
     {
+        Dictionary<PotionType, int> fulfilledCounts = new Dictionary<PotionType, int>();
+        foreach (PotionType potType in desiredPotionTypes)
+        {
+            fulfilledCounts[potType] = FulfilledPotions.Count(potionType => potionType == potType);
+        }
+
         List<PotionType> unFulfilledPotions = new List<PotionType>();
         foreach (PotionType potType in desiredPotionTypes)
         {
-            if (!FulfilledPotions.Contains(potType))
+            int numFulfilled = fulfilledCounts[potType];
+            int numNeeded = desiredPotionTypes.Count(potionType => potionType == potType);
+            if (numFulfilled < numNeeded)
             {
                 unFulfilledPotions.Add(potType);
             }
@@ -35,20 +44,34 @@ public class Character : MonoBehaviour
 
         foreach (PotionType potType in unFulfilledPotions)
         {
-            int numPotionsNeeded = unFulfilledPotions.Count(potionType => potionType == potType);
-            int numPotionsToRemove = Math.Min(numPotionsNeeded, DeliverPotion.Instance.readyPotions.Count(potionType => potionType == potType));
+            int numNeeded = desiredPotionTypes.Count(potionType => potionType == potType);
+            int numFulfilled = fulfilledCounts[potType];
+            int numPotionsToRemove = Math.Min(numNeeded - numFulfilled, DeliverPotion.Instance.readyPotions.Count(potionType => potionType == potType));
 
             for (int i = 0; i < numPotionsToRemove; i++)
             {
                 DeliverPotion.Instance.readyPotions.Remove(potType);
                 FulfilledPotions.Add(potType);
+                fulfilledCounts[potType]++;
             }
         }
 
-        if (unFulfilledPotions.Except(FulfilledPotions).Count() == 0)
+        bool allPotionsFulfilled = true;
+        foreach (PotionType potType in desiredPotionTypes)
         {
-            SpawnManager spawnManager = FindObjectOfType<SpawnManager>();
-            spawnManager.RemoveCharacter(slotIndex);
+            int numFulfilled = fulfilledCounts[potType];
+            int numNeeded = desiredPotionTypes.Count(potionType => potionType == potType);
+            if (numFulfilled < numNeeded)
+            {
+                allPotionsFulfilled = false;
+                break;
+            }
+        }
+
+        if (allPotionsFulfilled)
+        {
+            ScoreManager.instance.AddScore(pay);
+            SpawnManager.instance.RemoveCharacter(slotIndex);
             Destroy(gameObject);
         }
     }
@@ -64,6 +87,10 @@ public class Character : MonoBehaviour
     {
         foreach (PotionType potType in desiredPotionTypes)
         {
+            //change base pay amount
+            pay += 6;
+
+            //change thought bubble size
             Vector2 vec = thoughtBubbleRenderer.size;
             vec.y += 8;
             thoughtBubbleRenderer.size = vec;
