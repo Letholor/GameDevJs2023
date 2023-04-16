@@ -41,6 +41,7 @@ public class SpawnManager : Singleton<SpawnManager>
                 // Move the character to the chosen slot if it's not already slotted
                 GameObject character = characterPool[characterIndex];
                 Character characterScript = character.GetComponent<Character>();
+                characterScript.clock.StartTimer();
                 if (characterScript.slotIndex == 0)
                 {
                     characterPool = characterPool.Where((val, idx) => idx != characterIndex).ToArray();
