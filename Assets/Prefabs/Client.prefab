@@ -55,6 +55,7 @@ MonoBehaviour:
   _potionGeneric: {fileID: 8333761471469413410, guid: b53d9a3145ed62d46a196b81faa51e21, type: 3}
   shelf: {fileID: 2748573711776410222}
   clock: {fileID: 1436625345323243931}
+  sprite: {fileID: 7245214622735935633}
 --- !u!61 &3620336601564656193
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -443,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 215592227930433914, guid: d880593502fb24240a2f01458bbf031d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.107
+      value: 0.087
       objectReference: {fileID: 0}
     - target: {fileID: 215592227930433914, guid: d880593502fb24240a2f01458bbf031d, type: 3}
       propertyPath: m_ConstrainProportionsScale

@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+[System.Serializable]
+public struct CharacterBasics
+{
+    public PotionType[] desiredPotionTypes;
+    public Sprite looks;
+}
+
 public class SpawnManager : Singleton<SpawnManager>
 {
     public GameObject[] characterPool;
@@ -11,13 +18,8 @@ public class SpawnManager : Singleton<SpawnManager>
     public float maxSpawnInterval = 5f;
 
     private List<int> availableSlots = new List<int>() { 0, 1, 2, 3, 4 };
-    private bool isSpawning = false;
 
-    void Start()
-    {
-        // Start the spawning coroutine
-        StartCoroutine(SpawnCharacters());
-    }
+    public bool startSpawning;
 
     IEnumerator SpawnCharacters()
     {
@@ -50,6 +52,15 @@ public class SpawnManager : Singleton<SpawnManager>
                     characterScript.slotIndex = spawnPointIndex;
                 }
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (startSpawning)
+        {
+            startSpawning = false;
+            StartCoroutine(SpawnCharacters());
         }
     }
 

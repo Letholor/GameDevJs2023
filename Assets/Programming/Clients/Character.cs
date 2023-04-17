@@ -20,6 +20,8 @@ public class Character : MonoBehaviour
 
     List<PotionType> FulfilledPotions = new List<PotionType>();
 
+    public SpriteRenderer sprite;
+
     void Start()
     {
         UpdateThoughtBubbleSprite();
@@ -97,12 +99,12 @@ public class Character : MonoBehaviour
     }
 
 
-    public void SetDesiredPotionType(PotionType[] potionType)
+    /*public void SetDesiredPotionType(PotionType[] potionType)
     {
         // Set the desired potion type and update the thought bubble sprite
         desiredPotionTypes = potionType;
         UpdateThoughtBubbleSprite();
-    }
+    }*/
 
     private void UpdateThoughtBubbleSprite()
     {
@@ -118,6 +120,7 @@ public class Character : MonoBehaviour
 
             GameObject potionDesire = Instantiate(_potionGeneric);
             potionDesire.transform.parent = shelf.transform;
+            potionDesire.transform.localScale = new Vector3 (1.5f, 1.5f, 1.5f);
 
             foreach (PotionTypeToSprite potionTypeToSprite in DeliverPotion.Instance.potionTypeToSprites)
             {
@@ -128,6 +131,8 @@ public class Character : MonoBehaviour
                     thoughtRenderer.gameObject.SetActive(true);
                 }
             }
+
+            potionDesire.transform.position = new Vector3 (0, 0 ,0);
         }
     }
 }
