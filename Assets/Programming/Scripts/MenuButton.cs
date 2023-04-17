@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Button : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private Image img;
     [SerializeField] private Sprite defaultSprite, pressedSprite;
