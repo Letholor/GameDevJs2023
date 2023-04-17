@@ -11,96 +11,108 @@ public class Timer : MonoBehaviour
     public Image slider;
     public float timeLimit = 60f;
     public bool inMinutes;
+    public bool changeColor;
 
     [Space]
     public UnityEvent OnStart, OnComplete;
 
-    float time;
-    float multiplierFactor;
-    bool startTimer;
+    private Text _timerText;
+    private Image _slider;
+    private Image _timerImage;
 
-    TimeSpan timeConverter;
+    public float _time;
+    private float _multiplierFactor;
+    private bool _startTimer;
+
+    private TimeSpan _timeConverter;
 
     private void Start()
     {
-        time = timeLimit;
-        slider.fillAmount = time * multiplierFactor;
-        startTimer = false;
+        _timerText = timerText;
+        _slider = slider;
+        _timerImage = slider;
 
-        if (inMinutes)
-        {
-            timeConverter = TimeSpan.FromSeconds(time);
-            float minutes = timeConverter.Minutes;
-            float seconds = timeConverter.Seconds;
+        _time = timeLimit;
+        _multiplierFactor = 1f / timeLimit;
+        _startTimer = false;
 
-            timerText.text = $"{minutes}:{seconds}";
-        }
-        else
+        // display initial timer value
+        UpdateTimerDisplay();
+
+        //StartTimer();
+    }
+
+    public void AddSeconds(float secondsToAdd)
+    {
+        _time += secondsToAdd;
+        UpdateTimerDisplay();
+        UpdateSliderFillAmount();
+    }
+
+    private IEnumerator RunTimer()
+    {
+        _startTimer = true;
+        while (_time > 0f)
         {
-            timerText.text = Mathf.CeilToInt(time).ToString();
+            _time -= Time.deltaTime;
+            UpdateTimerDisplay();
+            UpdateSliderFillAmount();
+            yield return null; // wait one frame
         }
+        _startTimer = false;
+        OnComplete?.Invoke();
     }
 
     public void StartTimer()
     {
-        multiplierFactor = 1f / timeLimit;
-        startTimer = true;
-        slider.fillAmount = time * multiplierFactor;
-
+        StartCoroutine(RunTimer());
         OnStart?.Invoke();
     }
-    private void Update()
-    {
-        if (!startTimer) return;   
 
-        if (time > 0f)
-        {
-            time -= Time.deltaTime;
-
-            if (inMinutes)
-            {
-                timeConverter = TimeSpan.FromSeconds(time);
-                float minutes = timeConverter.Minutes;
-                float seconds = timeConverter.Seconds;
-
-                timerText.text = $"{minutes}:{seconds}";
-            }
-            else
-            {
-                timerText.text = Mathf.CeilToInt(time).ToString();
-            }
-            slider.fillAmount = time * multiplierFactor;
-        }
-        else
-        {
-            startTimer = false;
-            OnComplete?.Invoke();
-        }
-    }
     public void PauseTimer()
     {
-        if (startTimer)
+        if (_startTimer)
         {
-            startTimer = false;
+            StopAllCoroutines();
+            _startTimer = false;
         }
     }
+
     public void ResetTimer()
     {
-        time = timeLimit;
+        StopAllCoroutines();
+        _time = timeLimit;
+        UpdateTimerDisplay();
+        UpdateSliderFillAmount();
+    }
 
+    private void UpdateTimerDisplay()
+    {
         if (inMinutes)
         {
-            timeConverter = TimeSpan.FromSeconds(time);
-            float minutes = timeConverter.Minutes;
-            float seconds = timeConverter.Seconds;
-
-            timerText.text = $"{minutes}:{seconds}";
+            _timeConverter = TimeSpan.FromSeconds(_time);
+            string timerString = string.Format("{0:D2}:{1:D2}", _timeConverter.Minutes, _timeConverter.Seconds);
+            _timerText.text = timerString;
         }
-        else
+        else if (_timerText != null)
         {
-            timerText.text = Mathf.CeilToInt(time).ToString();
+            _timerText.text = Mathf.CeilToInt(_time).ToString();
         }
 
-        slider.fillAmount = time * multiplierFactor;
+        UpdateTimerColor();
+    }
+
+    private void UpdateSliderFillAmount()
+    {
+        _slider.fillAmount = _time * _multiplierFactor;
+    }
+
+    private void UpdateTimerColor()
+    {
+        if (changeColor)
+        {
+            float percentage = 1 - (_time / timeLimit);
+            _timerImage.color = Color.Lerp(Color.green, Color.red, percentage);
+        }
     }
 }
