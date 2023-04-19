@@ -9,23 +9,25 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private Image img;
     [SerializeField] private Sprite defaultSprite, pressedSprite;
-    [SerializeField] private AudioClip compressedClip, uncompressedClip;
+    [SerializeField] private AudioClip compressedClip, uncompressedClip, moveOverButtonClip;
     [SerializeField] private AudioSource source;
     [SerializeField] private bool changeScene;
-    [SerializeField] private bool changeToMainMenu;
-    [SerializeField] private bool changeToCreditsMenu;
-    [SerializeField] private bool changeToOptionsMenu;
-    [SerializeField] private bool changeToLoseMenu;
+    [SerializeField] private bool changeToMainMenu = true;
+    [SerializeField] private bool changeToCreditsMenu = false;
+    [SerializeField] private bool changeToOptionsMenu = false;
+    [SerializeField] private bool changeToLoseMenu = false;
+    [SerializeField] private bool changeToLevelSelectMenu = false;
     [SerializeField] private string nextScene;
     [SerializeField] private GameObject mainMenuStuff;
     [SerializeField] private GameObject creditsMenuStuff;
     [SerializeField] private GameObject optionsMenuStuff;
     [SerializeField] private GameObject loseMenuStuff;
+    [SerializeField] private GameObject levelSelectStuff;
 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        img.sprite = pressedSprite;
+        //img.sprite = pressedSprite;
         source.PlayOneShot(compressedClip);
         if (changeScene)
         {
@@ -37,6 +39,7 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             creditsMenuStuff.SetActive(true);
             optionsMenuStuff.SetActive(false);
             loseMenuStuff.SetActive(false);
+            levelSelectStuff.SetActive(false);
         }
         if (changeToMainMenu)
         {
@@ -44,6 +47,7 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             creditsMenuStuff.SetActive(false);
             optionsMenuStuff.SetActive(false);
             loseMenuStuff.SetActive(false);
+            levelSelectStuff.SetActive(false);
         }
         if (changeToOptionsMenu)
         {
@@ -51,6 +55,7 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             creditsMenuStuff.SetActive(false);
             optionsMenuStuff.SetActive(true);
             loseMenuStuff.SetActive(false);
+            levelSelectStuff.SetActive(false);
         }
         if (changeToLoseMenu) 
         {
@@ -58,6 +63,15 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             mainMenuStuff.SetActive(false);
             creditsMenuStuff.SetActive(false);
             optionsMenuStuff.SetActive(false);
+            levelSelectStuff.SetActive(false);
+        }
+        if (changeToLevelSelectMenu) 
+        {
+            loseMenuStuff.SetActive(false);
+            mainMenuStuff.SetActive(false);
+            creditsMenuStuff.SetActive(false);
+            optionsMenuStuff.SetActive(false);
+            levelSelectStuff.SetActive(true);
         }
     }
 
@@ -65,6 +79,12 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         img.sprite = defaultSprite;
         source.PlayOneShot(uncompressedClip);
+    }
+
+    private void OnMouseEnter()
+    {
+        img.sprite = pressedSprite;
+        source.PlayOneShot(moveOverButtonClip);
     }
 
     public void IWasClicked()
