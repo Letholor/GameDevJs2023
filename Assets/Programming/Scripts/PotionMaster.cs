@@ -132,22 +132,35 @@ public class PotionMaster : Singleton<PotionMaster>
         {
             if (potion.recipy.Count == ingredients.Count)
             {
-                bool ingredientsMatch = true;
-                foreach (Ingredient ingredient in ingredients)
-                {
-                    if (!potion.recipy.Contains(ingredient))
-                    {
-                        ingredientsMatch = false;
-                        break;
-                    }
-                }
-                if (ingredientsMatch)
+                if (AreListsIdentical(potion.recipy, ingredients))
                 {
                     return potion.potionType;
                 }
             }
         }
+
         return PotionType.None;
+    }
+
+    public static bool AreListsIdentical(List<Ingredient> list1, List<Ingredient> list2)
+    {
+        list1.Sort((x, y) => string.Compare(x.ingredientName, y.ingredientName));
+        list2.Sort((x, y) => string.Compare(x.ingredientName, y.ingredientName));
+
+        if (list1.Count != list2.Count)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < list1.Count; i++)
+        {
+            if (list1[i] != list2[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public GameObject explosion;

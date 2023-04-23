@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 366a0265fd02a7e4e8ade79e79848ce9
+guid: 2f0e5abddd66b784aa1945e59ebd5537
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,112 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: EmptyCaulderonLiquid 1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 216.8
-        width: 114
-        height: 54.2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 114b95b97d3ad7b4698cf6474bd4119c
-      internalID: 1335430448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EmptyCaulderonLiquid 1_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 162.8
-        width: 114
-        height: 54.2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 632cf55e9afeb74479ee4627a2d33639
-      internalID: -2029786842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EmptyCaulderonLiquid 1_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 108.8
-        width: 114
-        height: 54.2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa0808c4af24037429c96a48d047ee65
-      internalID: -1993797649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EmptyCaulderonLiquid 1_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 54.8
-        width: 114
-        height: 54.2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b955bffaf382c15488c8e56080dee908
-      internalID: 1376366400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EmptyCaulderonLiquid 1_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0.79999924
-        width: 114
-        height: 54.2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5efa8bb5461ba94dac7c01114fa1690
-      internalID: 2064137433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -231,12 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      EmptyCaulderonLiquid 1_0: 1335430448
-      EmptyCaulderonLiquid 1_1: -2029786842
-      EmptyCaulderonLiquid 1_2: -1993797649
-      EmptyCaulderonLiquid 1_3: 1376366400
-      EmptyCaulderonLiquid 1_4: 2064137433
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
