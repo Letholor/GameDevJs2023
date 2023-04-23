@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302e35b8cbc486c469eca95de3f88ed2, type: 3}
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
-  title: Health Potion
+  title: Health potion
   deets:
     potionType: 1
     sprite: {fileID: 742544562, guid: 162f9097a91cc4d46b6011fcf7c5e66c, type: 3}

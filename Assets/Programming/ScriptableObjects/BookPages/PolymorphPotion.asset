@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302e35b8cbc486c469eca95de3f88ed2, type: 3}
   m_Name: PolymorphPotion
   m_EditorClassIdentifier: 
-  title: Polymorph Potion
+  title: Polymorph potion
   deets:
     potionType: 5
-    sprite: {fileID: 661707845, guid: 162f9097a91cc4d46b6011fcf7c5e66c, type: 3}
+    sprite: {fileID: -1909703728, guid: 162f9097a91cc4d46b6011fcf7c5e66c, type: 3}
     recipy:
     - {fileID: 11400000, guid: 7a17c3837b3f6e340872f60635e78250, type: 2}
     - {fileID: 11400000, guid: 7f83671b865b3df438dc6c3a27f304f6, type: 2}
