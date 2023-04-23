@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Mana Potion
   deets:
     potionType: 2
-    sprite: {fileID: 0}
+    sprite: {fileID: -1453836114, guid: 162f9097a91cc4d46b6011fcf7c5e66c, type: 3}
     recipy:
-    - {fileID: 11400000, guid: 238ff9d84e4d62c4484bb029d13a0f42, type: 2}
+    - {fileID: 11400000, guid: 7a17c3837b3f6e340872f60635e78250, type: 2}
     - {fileID: 11400000, guid: 7f83671b865b3df438dc6c3a27f304f6, type: 2}

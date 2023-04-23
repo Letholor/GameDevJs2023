@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HerbsButtons_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 60.333332
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3740b2e6ca0922418f1e0e2d65d5848
+      internalID: 197545738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HerbsButtons_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 60.333332
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da76539b55bb6e645a84c9f37972e14d
+      internalID: 1922288930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HerbsButtons_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 60.333332
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f460b5e697609488d551277354c846
+      internalID: 1420114909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HerbsButtons_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 60.333332
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5f40952f9c4a84b920b6e799dfd868
+      internalID: -1148458877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HerbsButtons_4
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 60.333332
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a509b7b89f3734981a8e566c0ce0af
+      internalID: 2134112527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HerbsButtons_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 60.333332
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bae3c3d655d60545b6ee3417579dd91
+      internalID: 504615332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +240,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HerbsButtons_0: 197545738
+      HerbsButtons_1: 1922288930
+      HerbsButtons_2: 1420114909
+      HerbsButtons_3: -1148458877
+      HerbsButtons_4: 2134112527
+      HerbsButtons_5: 504615332
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

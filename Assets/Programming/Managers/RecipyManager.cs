@@ -114,7 +114,7 @@ public class RecipyManager : Singleton<RecipyManager>
 
             GameObject newButton = Instantiate(buttonPrefab, buttonParent);
             Button buttonComponent = newButton.GetComponent<Button>();
-            newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = new string(pageIndex + " in the wall");
+            newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = new string(pageDeets.title);
             buttonComponent.onClick.AddListener(() => GoToPage(pageIndex)); // Use the new variable in the lambda
             page.SetActive(false);
         }
