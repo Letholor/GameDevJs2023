@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: ingredient
       value: 
       objectReference: {fileID: 11400000, guid: 7f83671b865b3df438dc6c3a27f304f6, type: 2}
+    - target: {fileID: 2672520470697485560, guid: 36fa93b3895189a4388b9dd3771966fe, type: 3}
+      propertyPath: soundEffect
+      value: 
+      objectReference: {fileID: 2811293874560055412, guid: 2d6193ba6745d0149a74b6878f8989a7, type: 3}
     - target: {fileID: 2672520470697485562, guid: 36fa93b3895189a4388b9dd3771966fe, type: 3}
       propertyPath: m_Name
       value: Herbs
@@ -937,6 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: 238ff9d84e4d62c4484bb029d13a0f42, type: 2}
+  soundEffect: {fileID: 0}
 --- !u!114 &347123787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,11 +1045,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 837111578706619543, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: m_SortingOrder
-      value: 49
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 2122333075641017921, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: m_Name
       value: heldPotionholder
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925309414893419849, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 4341261390040971617, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: m_RootOrder
@@ -1090,9 +1099,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5117404867023510066, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172305951526146369, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849462750255418783, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 7513145416958797867, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: gotNothin
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684668057911669794, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834061684790017054, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
@@ -1418,6 +1447,10 @@ PrefabInstance:
       propertyPath: ingredient
       value: 
       objectReference: {fileID: 11400000, guid: 7a17c3837b3f6e340872f60635e78250, type: 2}
+    - target: {fileID: 2672520470697485560, guid: 36fa93b3895189a4388b9dd3771966fe, type: 3}
+      propertyPath: soundEffect
+      value: 
+      objectReference: {fileID: 2811293874560055412, guid: 4a6b8ef78fd18524c955b90e3c401390, type: 3}
     - target: {fileID: 2672520470697485562, guid: 36fa93b3895189a4388b9dd3771966fe, type: 3}
       propertyPath: m_Name
       value: Oil
@@ -1562,6 +1595,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479479391}
   m_CullTransparentMesh: 1
+--- !u!1 &502930889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 502930891}
+  - component: {fileID: 502930890}
+  m_Layer: 0
+  m_Name: == Audio ==
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &502930890
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502930889}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2f465819ee655f6469661df79db9c239, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8462dd2a73aad96438c9bc844ca4a1ee, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &502930891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502930889}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.33, y: 0.06, z: -5.888205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540858099
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,6 +2357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: b126b6ff7b01ffc46b9d53f6e4af13ea, type: 2}
+  soundEffect: {fileID: 0}
 --- !u!1 &870361059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,6 +2553,8 @@ MonoBehaviour:
   potionHolder1script: {fileID: 0}
   potionHolder2script: {fileID: 0}
   potionHolder3script: {fileID: 0}
+  bottleClink: {fileID: 5564375227037564347, guid: 6b6012b54724d3843930a90a6ddb8578, type: 3}
+  slosh: {fileID: 2811293874560055412, guid: 18b3b94200c10fe4782ff8b916501235, type: 3}
 --- !u!4 &903074514
 Transform:
   m_ObjectHideFlags: 0
@@ -2469,6 +2633,8 @@ MonoBehaviour:
   pageNum: 0
   buttonPrefab: {fileID: 1450778434114536761, guid: 209497fd360a0c94582e39e11808f274, type: 3}
   buttonParent: {fileID: 1130274563}
+  moveBookSound: {fileID: 4252777225325038099, guid: a84c52b9ab1c28e40802e99391dc5c11, type: 3}
+  moveBackSound: {fileID: 4252777225325038099, guid: 4b8c109026385c54aaff395a2bcb6d07, type: 3}
 --- !u!1 &950153764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,6 +2923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: 238ff9d84e4d62c4484bb029d13a0f42, type: 2}
+  soundEffect: {fileID: 0}
 --- !u!114 &999616768 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2672520470697485559, guid: 36fa93b3895189a4388b9dd3771966fe, type: 3}
@@ -3608,6 +3775,10 @@ PrefabInstance:
       propertyPath: ingredient
       value: 
       objectReference: {fileID: 11400000, guid: b126b6ff7b01ffc46b9d53f6e4af13ea, type: 2}
+    - target: {fileID: 2672520470697485560, guid: 36fa93b3895189a4388b9dd3771966fe, type: 3}
+      propertyPath: soundEffect
+      value: 
+      objectReference: {fileID: 2811293874560055412, guid: 37cc4487a6968ed4284ae4f306e8e518, type: 3}
     - target: {fileID: 2672520470697485562, guid: 36fa93b3895189a4388b9dd3771966fe, type: 3}
       propertyPath: m_Name
       value: Mushroom
@@ -5238,6 +5409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: 7f83671b865b3df438dc6c3a27f304f6, type: 2}
+  soundEffect: {fileID: 0}
 --- !u!1 &2009375068
 GameObject:
   m_ObjectHideFlags: 0
@@ -5501,7 +5673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 837111578706619543, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: m_SortingOrder
-      value: 48
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 2122333075641017921, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: m_Name
@@ -5554,6 +5726,10 @@ PrefabInstance:
     - target: {fileID: 7513145416958797867, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: gotNothin
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684668057911669794, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
@@ -5779,6 +5955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: 7a17c3837b3f6e340872f60635e78250, type: 2}
+  soundEffect: {fileID: 0}
 --- !u!1 &2136115431
 GameObject:
   m_ObjectHideFlags: 0
@@ -5865,6 +6042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodButton
       objectReference: {fileID: 0}
+    - target: {fileID: 2672520470697485560, guid: 36fa93b3895189a4388b9dd3771966fe, type: 3}
+      propertyPath: soundEffect
+      value: 
+      objectReference: {fileID: 2811293874560055412, guid: 538b785399d5ac64292a930d60741b44, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36fa93b3895189a4388b9dd3771966fe, type: 3}
 --- !u!1001 &4144715695697943424
@@ -5874,9 +6055,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1290183344}
     m_Modifications:
+    - target: {fileID: 837111578706619543, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 46
+      objectReference: {fileID: 0}
     - target: {fileID: 2122333075641017921, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: m_Name
       value: heldPotionholder
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925309414893419849, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 4341261390040971617, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: m_RootOrder
@@ -5922,9 +6111,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5117404867023510066, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172305951526146369, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849462750255418783, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 47
+      objectReference: {fileID: 0}
     - target: {fileID: 7513145416958797867, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
       propertyPath: gotNothin
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684668057911669794, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834061684790017054, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74462d33b7c14414a8c0a85271365b9f, type: 3}
