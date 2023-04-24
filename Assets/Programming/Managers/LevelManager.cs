@@ -6,9 +6,19 @@ public class LevelManager : Singleton<LevelManager>
 {
     public List<Level> allLevels;
     public int currentLevel;
+    public int levelMax;
     public GameObject characterTemplate;
     private Dictionary<int, Level> levelDict = new Dictionary<int, Level>();
     public Transform spawnPlace;
+    [SerializeField] private bool nextLevel;
+
+    private void Awake()
+    {
+        if (currentLevel == null)
+        {
+            currentLevel = 0;
+        }
+    }
 
     private void Start()
     {
@@ -39,5 +49,14 @@ public class LevelManager : Singleton<LevelManager>
         }
 
         SpawnManager.instance.startSpawning = true;
+    }
+
+    private void Update()
+    {
+        if (nextLevel = true)
+        {
+            currentLevel++;
+            nextLevel = false;
+        }
     }
 }
