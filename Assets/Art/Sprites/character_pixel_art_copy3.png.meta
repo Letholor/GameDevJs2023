@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e75522fdf0eb694d9dd6b695ae5406d
+guid: 445a7bb19ddf7ed4fb42d70060a5cfb3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,12 +117,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: witch1
+      name: character_pixel_art_copy3_0
       rect:
         serializedVersion: 2
-        x: 82
+        x: 74
         y: 0
-        width: 481
+        width: 489
         height: 788
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46e9f708010c05140a5253e04dd43acd
-      internalID: 2072383056
+      spriteID: 0c9204c32c4bc0b4da2f232614eb39ac
+      internalID: -521332598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: barbarian2
+      name: character_pixel_art_copy3_1
       rect:
         serializedVersion: 2
         x: 570
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c655eb1e61778ce4cb59e83cc647d50b
-      internalID: -141011414
+      spriteID: 18b3f38694fdc8448aefab05673ae1eb
+      internalID: -1351709862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot2
+      name: character_pixel_art_copy3_2
       rect:
         serializedVersion: 2
         x: 1570
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dbdf0bbe84b3ed4c871bab6ea9fbddc
-      internalID: -988977320
+      spriteID: 18df372a7f3bc3a4c8c9466d4c81e104
+      internalID: 1098941922
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      barbarian2: -141011414
-      robot2: -988977320
-      witch1: 2072383056
+      character_pixel_art_copy3_0: -521332598
+      character_pixel_art_copy3_1: -1351709862
+      character_pixel_art_copy3_2: 1098941922
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
