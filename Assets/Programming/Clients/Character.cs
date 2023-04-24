@@ -71,6 +71,91 @@ public class Character : MonoBehaviour
                 DeliverPotion.Instance.readyPotions.Remove(potType);
                 FulfilledPotions.Add(potType);
                 fulfilledCounts[potType]++;
+
+                PotionMaster.instance.potionHolder1script.DisarmPotion();
+                PotionMaster.instance.potionHolder2script.DisarmPotion();
+                PotionMaster.instance.potionHolder3script.DisarmPotion();
+
+                foreach (PotionType pot in DeliverPotion.Instance.readyPotions)
+                {
+                    switch (pot)
+                    {
+                        case PotionType.Health:
+                            if (PotionMaster.instance.potionHolder1script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder1script.ArmPotion(PotionType.Health);
+                            }
+                            else if (PotionMaster.instance.potionHolder2script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder2script.ArmPotion(PotionType.Health);
+                            }
+                            else if (PotionMaster.instance.potionHolder3script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder3script.ArmPotion(PotionType.Health);
+                            }
+                            break;
+
+                        case PotionType.Mana:
+                            if (PotionMaster.instance.potionHolder1script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder1script.ArmPotion(PotionType.Mana);
+                            }
+                            else if (PotionMaster.instance.potionHolder2script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder2script.ArmPotion(PotionType.Mana);
+                            }
+                            else if (PotionMaster.instance.potionHolder3script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder3script.ArmPotion(PotionType.Mana);
+                            }
+                            break;
+
+                        case PotionType.Strength:
+                            if (PotionMaster.instance.potionHolder1script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder1script.ArmPotion(PotionType.Strength);
+                            }
+                            else if (PotionMaster.instance.potionHolder2script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder2script.ArmPotion(PotionType.Strength);
+                            }
+                            else if (PotionMaster.instance.potionHolder3script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder3script.ArmPotion(PotionType.Strength);
+                            }
+                            break;
+
+                        case PotionType.Speed:
+                            if (PotionMaster.instance.potionHolder1script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder1script.ArmPotion(PotionType.Speed);
+                            }
+                            else if (PotionMaster.instance.potionHolder2script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder2script.ArmPotion(PotionType.Speed);
+                            }
+                            else if (PotionMaster.instance.potionHolder3script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder3script.ArmPotion(PotionType.Speed);
+                            }
+                            break;
+
+                        case PotionType.Polymorph:
+                            if (PotionMaster.instance.potionHolder1script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder1script.ArmPotion(PotionType.Polymorph);
+                            }
+                            else if (PotionMaster.instance.potionHolder2script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder2script.ArmPotion(PotionType.Polymorph);
+                            }
+                            else if (PotionMaster.instance.potionHolder3script.gotNothin)
+                            {
+                                PotionMaster.instance.potionHolder3script.ArmPotion(PotionType.Polymorph);
+                            }
+                            break;
+                    }
+                }
             }
         }
 
@@ -98,14 +183,6 @@ public class Character : MonoBehaviour
         }
     }
 
-
-    /*public void SetDesiredPotionType(PotionType[] potionType)
-    {
-        // Set the desired potion type and update the thought bubble sprite
-        desiredPotionTypes = potionType;
-        UpdateThoughtBubbleSprite();
-    }*/
-
     private void UpdateThoughtBubbleSprite()
     {
         foreach (PotionType potType in desiredPotionTypes)
@@ -120,7 +197,7 @@ public class Character : MonoBehaviour
 
             GameObject potionDesire = Instantiate(_potionGeneric);
             potionDesire.transform.parent = shelf.transform;
-            potionDesire.transform.localScale = new Vector3 (1.5f, 1.5f, 1.5f);
+            potionDesire.transform.localScale = new Vector3 (5f, 5f, 5f);
 
             foreach (PotionTypeToSprite potionTypeToSprite in DeliverPotion.Instance.potionTypeToSprites)
             {

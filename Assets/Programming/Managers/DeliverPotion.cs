@@ -9,7 +9,8 @@ public enum PotionType
     Health,
     Mana,
     Strength,
-    Speed
+    Speed,
+    Polymorph
 }
 
 [System.Serializable]

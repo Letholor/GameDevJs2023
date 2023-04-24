@@ -108,13 +108,15 @@ public class RecipyManager : Singleton<RecipyManager>
             {
                 var ingredient = Instantiate(ingredientTemplate, shelf);
                 ingredient.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = ing.ingredientName;
+                ingredient.transform.GetChild(1).GetComponent<Image>().sprite = ing.sprite;
             }
 
             title.GetChild(0).GetComponent<TextMeshProUGUI>().text = pageDeets.title;
 
             GameObject newButton = Instantiate(buttonPrefab, buttonParent);
             Button buttonComponent = newButton.GetComponent<Button>();
-            newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = new string(pageIndex + " in the wall");
+            newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = new string(pageDeets.title);
+            newButton.transform.GetChild(1).GetComponent<Image>().sprite = pageDeets.deets.sprite;
             buttonComponent.onClick.AddListener(() => GoToPage(pageIndex)); // Use the new variable in the lambda
             page.SetActive(false);
         }

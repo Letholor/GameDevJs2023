@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302e35b8cbc486c469eca95de3f88ed2, type: 3}
   m_Name: ManaPotion
   m_EditorClassIdentifier: 
-  title: Mana Potion
+  title: Mana potion
   deets:
     potionType: 2
-    sprite: {fileID: 0}
+    sprite: {fileID: -1453836114, guid: 162f9097a91cc4d46b6011fcf7c5e66c, type: 3}
     recipy:
-    - {fileID: 11400000, guid: 238ff9d84e4d62c4484bb029d13a0f42, type: 2}
+    - {fileID: 11400000, guid: 7a17c3837b3f6e340872f60635e78250, type: 2}
     - {fileID: 11400000, guid: 7f83671b865b3df438dc6c3a27f304f6, type: 2}

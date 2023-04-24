@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a646c425637212c4bba0d1e64efa330b, type: 3}
-  m_Name: IngredientExample
+  m_Name: Oils
   m_EditorClassIdentifier: 
-  ingredientName: Example
-  sprite: {fileID: 21300000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
+  ingredientName: Oils
+  sprite: {fileID: 174920509, guid: a6b7a4a108a141649884ee8176cffa40, type: 3}
+  color: {r: 0.18431373, g: 0.37647063, b: 0.50980395, a: 1}
