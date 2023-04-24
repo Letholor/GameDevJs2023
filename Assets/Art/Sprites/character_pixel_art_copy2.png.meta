@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23df6d8ad2bb28b4498248a096859839
+guid: 5e75522fdf0eb694d9dd6b695ae5406d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: witch
+      name: witch1
       rect:
         serializedVersion: 2
         x: 82
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f45c7f2de9a60fd43b603bd68136a7d8
-      internalID: 1614272218
+      spriteID: 46e9f708010c05140a5253e04dd43acd
+      internalID: 2072383056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: barbarian
+      name: barbarian2
       rect:
         serializedVersion: 2
         x: 570
@@ -152,19 +152,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 220123a7867a0e34e92e1ec0ae5f1e6e
-      internalID: -112946354
+      spriteID: c655eb1e61778ce4cb59e83cc647d50b
+      internalID: -141011414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot
+      name: robot2
       rect:
         serializedVersion: 2
-        x: 1575
+        x: 1570
         y: 0
-        width: 910
+        width: 915
         height: 700
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd1957f5feeca346b2ed917df7afe03
-      internalID: -785222800
+      spriteID: 4dbdf0bbe84b3ed4c871bab6ea9fbddc
+      internalID: -988977320
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      barbarian: -112946354
-      robot: -785222800
-      witch: 1614272218
+      barbarian2: -141011414
+      robot2: -988977320
+      witch1: 2072383056
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
