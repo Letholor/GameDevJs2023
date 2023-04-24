@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class IngredientButton : MonoBehaviour
 {
     public Ingredient ingredient;
+    public GameObject soundEffect;
 
     private Button button;
 
@@ -16,5 +17,6 @@ public class IngredientButton : MonoBehaviour
     private void OnButtonClick()
     {
         PotionMaster.Instance.AddIngredient(ingredient);
+        Instantiate(soundEffect);
     }
 }

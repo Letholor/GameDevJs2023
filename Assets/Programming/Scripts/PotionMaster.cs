@@ -167,6 +167,9 @@ public class PotionMaster : Singleton<PotionMaster>
     public GameObject potionHolder1, potionHolder2, potionHolder3;
     [HideInInspector] public PotionHolder potionHolder1script, potionHolder2script, potionHolder3script;
 
+    //audio
+    public GameObject bottleClink, slosh;
+
     public void MixPotion()
     {
         if (currentIngredients.Count != 0)
@@ -187,6 +190,9 @@ public class PotionMaster : Singleton<PotionMaster>
                     {
                         potionHolder3script.ArmPotion(currentPotion);
                     }
+
+                    Instantiate(bottleClink);
+                    Instantiate(slosh);
 
                     DeliverPotion.instance.readyPotions.Add(currentPotion);
                 }
