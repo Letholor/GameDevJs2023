@@ -61,21 +61,30 @@ public class RecipyManager : Singleton<RecipyManager>
 
     #region Event Handlers
 
+    public GameObject moveBookSound, moveBackSound;
+
     // Method to move the book to the center position when the first button is pressed and back
     public void MoveToCenter()
     {
         if (isAtCenter)
         {
+            Invoke("CloseBook", .5f);
             centerPosition = originalPosition;
             isAtCenter = false;
             StartCoroutine(MoveBookToPosition(centerPosition));
         }
         else
         {
+            Instantiate(moveBookSound);
             centerPosition = new Vector3(0, 0, 0);
             isAtCenter = true;
             StartCoroutine(MoveBookToPosition(centerPosition));
         }
+    }
+
+    void CloseBook()
+    {
+        Instantiate(moveBackSound);
     }
 
     private IEnumerator MoveBookToPosition(Vector3 targetPosition)
