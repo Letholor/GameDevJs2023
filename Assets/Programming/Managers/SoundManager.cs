@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+<<<<<<< Updated upstream
     public static SoundManager Instance;
 
     private void Awake()
@@ -17,5 +18,17 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+=======
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+>>>>>>> Stashed changes
     }
 }

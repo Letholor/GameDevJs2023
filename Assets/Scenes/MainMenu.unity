@@ -2951,7 +2951,7 @@ MonoBehaviour:
   changeToOptionsMenu: 0
   changeToLoseMenu: 0
   changeToLevelSelectMenu: 0
-  nextScene: Letholor
+  nextScene: SampleScene
   mainMenuStuff: {fileID: 757484701}
   creditsMenuStuff: {fileID: 1783085531}
   optionsMenuStuff: {fileID: 1104663431}
@@ -4831,7 +4831,7 @@ MonoBehaviour:
   changeToOptionsMenu: 1
   changeToLoseMenu: 0
   changeToLevelSelectMenu: 0
-  nextScene: Letholor
+  nextScene: SampleScene
   mainMenuStuff: {fileID: 757484701}
   creditsMenuStuff: {fileID: 1783085531}
   optionsMenuStuff: {fileID: 1104663431}
