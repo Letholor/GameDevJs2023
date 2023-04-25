@@ -4463,7 +4463,7 @@ MonoBehaviour:
   changeToOptionsMenu: 0
   changeToLoseMenu: 0
   changeToLevelSelectMenu: 0
-  nextScene: Letholor
+  nextScene: SampleScene
   mainMenuStuff: {fileID: 757484701}
   creditsMenuStuff: {fileID: 1783085531}
   optionsMenuStuff: {fileID: 1104663431}
@@ -4654,7 +4654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1927719555
 Transform:
   m_ObjectHideFlags: 0
