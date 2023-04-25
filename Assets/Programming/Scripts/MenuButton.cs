@@ -24,6 +24,7 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] private GameObject GameOverStuff;
     [SerializeField] private GameObject levelSelectStuff;
 
+    public GameObject mouseoverAudio, clickAudio;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -78,19 +79,16 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        img.sprite = defaultSprite;
-        source.PlayOneShot(uncompressedClip);
     }
 
     private void OnMouseEnter()
     {
-        img.sprite = pressedSprite;
-        source.PlayOneShot(moveOverButtonClip);
+        Instantiate(mouseoverAudio);
     }
 
     public void IWasClicked()
     {
-        Debug.Log("Clicked" + this.name);
+        Instantiate(clickAudio);
     }
 
 }
