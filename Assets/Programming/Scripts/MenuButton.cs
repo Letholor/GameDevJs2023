@@ -31,6 +31,7 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         source.PlayOneShot(compressedClip);
         if (changeScene)
         {
+            PlayerPrefs.SetInt("currLevel", 1);
             SceneManager.LoadScene(sceneName: nextScene);
         }
         if (changeToCreditsMenu)

@@ -8,20 +8,18 @@ public class LevelManager : Singleton<LevelManager>
     public int currentLevel;
     public int levelMax;
     public GameObject characterTemplate;
-    private Dictionary<int, Level> levelDict = new Dictionary<int, Level>();
+    [HideInInspector] public Dictionary<int, Level> levelDict = new Dictionary<int, Level>();
     public Transform spawnPlace;
     [SerializeField] private bool nextLevel;
 
-    private void Awake()
-    {
-        if (currentLevel == null)
-        {
-            currentLevel = 0;
-        }
-    }
-
     private void Start()
     {
+        currentLevel = PlayerPrefs.GetInt("currLevel");
+        if (currentLevel == 0)
+        {
+            currentLevel = 1;
+        }
+
         foreach (Level level in allLevels)
         {
             levelDict.Add(level.levelNum, level);
@@ -47,16 +45,11 @@ public class LevelManager : Singleton<LevelManager>
                 i++;
             }
         }
+        else
+        {
+            //gameOverScreen
+        }
 
         SpawnManager.instance.startSpawning = true;
-    }
-
-    private void Update()
-    {
-        if (nextLevel = true)
-        {
-            currentLevel++;
-            nextLevel = false;
-        }
     }
 }

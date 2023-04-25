@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 445a7bb19ddf7ed4fb42d70060a5cfb3
+guid: 34b260c2ff8fa7f47871e263d4e52ccb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_pixel_art_copy3_0
+      name: gear_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 0
-        width: 489
-        height: 788
+        x: 0
+        y: 32
+        width: 33
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c9204c32c4bc0b4da2f232614eb39ac
-      internalID: -521332598
+      spriteID: 4da1193232f5e9949be3254ce73815e9
+      internalID: 167300580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_pixel_art_copy3_1
+      name: gear_1
       rect:
         serializedVersion: 2
-        x: 570
+        x: 0
         y: 0
-        width: 989
-        height: 804
+        width: 33
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,29 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18b3f38694fdc8448aefab05673ae1eb
-      internalID: -1351709862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_pixel_art_copy3_2
-      rect:
-        serializedVersion: 2
-        x: 1570
-        y: 0
-        width: 915
-        height: 700
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18df372a7f3bc3a4c8c9466d4c81e104
-      internalID: 1098941922
+      spriteID: b36b2b6ccede4fe4a92f419b03359e2e
+      internalID: -1886680775
       vertices: []
       indices: 
       edges: []
@@ -190,9 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character_pixel_art_copy3_0: -521332598
-      character_pixel_art_copy3_1: -1351709862
-      character_pixel_art_copy3_2: 1098941922
+      gear_0: 167300580
+      gear_1: -1886680775
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

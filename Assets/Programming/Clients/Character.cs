@@ -174,6 +174,39 @@ public class Character : MonoBehaviour
             }
         }
 
+        /*foreach (GameObject pot in potionsInBubble)
+        {
+            Destroy(pot);
+        }
+
+        Vector2 vec = thoughtBubbleRenderer.size;
+        vec.y = 4;
+        thoughtBubbleRenderer.size = vec;
+
+        foreach (PotionType potionType in FulfilledPotions)
+        {
+            int index = Array.IndexOf(desiredPotionTypes, potionType);
+            if (index >= 0)
+            {
+                desiredPotionTypes[index] = PotionType.None;
+            }
+        }
+
+        // get remaining desired potion types
+        List<PotionType> remainingPotionTypes = new List<PotionType>();
+        foreach (PotionType potionType in desiredPotionTypes)
+        {
+            if (potionType != PotionType.None)
+            {
+                remainingPotionTypes.Add(potionType);
+            }
+        }
+
+        desiredPotionTypes = remainingPotionTypes.ToArray();
+        pay = 0;
+
+        UpdateThoughtBubbleSprite();*/
+
         // If all desired potions have been fulfilled, add the specified score, remove the character, and destroy the game object
         if (allPotionsFulfilled)
         {
@@ -182,6 +215,8 @@ public class Character : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    List<GameObject> potionsInBubble = new List<GameObject>();
 
     private void UpdateThoughtBubbleSprite()
     {
@@ -196,6 +231,7 @@ public class Character : MonoBehaviour
             thoughtBubbleRenderer.size = vec;
 
             GameObject potionDesire = Instantiate(_potionGeneric);
+            potionsInBubble.Add(potionDesire);
             potionDesire.transform.parent = shelf.transform;
             potionDesire.transform.localScale = new Vector3 (5f, 5f, 5f);
 

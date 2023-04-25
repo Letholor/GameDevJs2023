@@ -7,4 +7,5 @@ public class Level : ScriptableObject
 {
     public List<CharacterBasics> levelClientele;
     public int levelNum;
+    public int maxScore;
 }

@@ -28,3 +28,4 @@ MonoBehaviour:
   - desiredPotionTypes: 010000000100000002000000
     looks: {fileID: 21300000, guid: 427c892e76cb4094097def808fbb2a08, type: 3}
   levelNum: 1
+  maxScore: 250

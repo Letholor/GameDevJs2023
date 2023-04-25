@@ -17,12 +17,15 @@ public class SpawnManager : Singleton<SpawnManager>
     public float minSpawnInterval = 1f;
     public float maxSpawnInterval = 5f;
 
+    bool gameStart;
+
     private List<int> availableSlots = new List<int>() { 0, 1, 2, 3, 4 };
 
     public bool startSpawning;
 
     IEnumerator SpawnCharacters()
     {
+        gameStart = true;
         // Loop infinitely
         while (true)
         {
@@ -61,6 +64,13 @@ public class SpawnManager : Singleton<SpawnManager>
         {
             startSpawning = false;
             StartCoroutine(SpawnCharacters());
+        }
+
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Character");
+        if (objectsWithTag.Length == 0 & gameStart)
+        {
+            gameStart = false;
+            EndGameManager.instance.EndLevel();
         }
     }
 
