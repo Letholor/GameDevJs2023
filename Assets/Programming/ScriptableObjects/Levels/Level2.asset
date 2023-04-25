@@ -10,22 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a7ef348204fc6542a7e74f35b9da65d, type: 3}
-  m_Name: Level1
+  m_Name: Level2
   m_EditorClassIdentifier: 
   levelClientele:
-  - desiredPotionTypes: 01000000
+  - desiredPotionTypes: 0300000004000000
     looks: {fileID: 21300000, guid: 6979768b30940d94ab2956a2fd7ed405, type: 3}
-  - desiredPotionTypes: 02000000
-    looks: {fileID: 21300000, guid: da46cab45ba1e6243ab813fea82203c4, type: 3}
-  - desiredPotionTypes: 0100000001000000
-    looks: {fileID: 21300000, guid: da46cab45ba1e6243ab813fea82203c4, type: 3}
-  - desiredPotionTypes: 0100000002000000
+  - desiredPotionTypes: 0400000004000000
     looks: {fileID: 21300000, guid: e43fbbf496da98d449d9d935a885909a, type: 3}
-  - desiredPotionTypes: 0200000002000000
+  - desiredPotionTypes: 03000000
     looks: {fileID: 21300000, guid: d28cec4f8b16ae143a783cf612977ddc, type: 3}
-  - desiredPotionTypes: 01000000
+  - desiredPotionTypes: 04000000
     looks: {fileID: 21300000, guid: da46cab45ba1e6243ab813fea82203c4, type: 3}
-  - desiredPotionTypes: 010000000100000002000000
+  - desiredPotionTypes: 01000000
+    looks: {fileID: 21300000, guid: e43fbbf496da98d449d9d935a885909a, type: 3}
+  - desiredPotionTypes: 0300000004000000
+    looks: {fileID: 21300000, guid: 6979768b30940d94ab2956a2fd7ed405, type: 3}
+  - desiredPotionTypes: 03000000
+    looks: {fileID: 21300000, guid: d28cec4f8b16ae143a783cf612977ddc, type: 3}
+  - desiredPotionTypes: 03000000
+    looks: {fileID: 21300000, guid: da46cab45ba1e6243ab813fea82203c4, type: 3}
+  - desiredPotionTypes: 040000000400000004000000
     looks: {fileID: 21300000, guid: ddab4ad15455d704e806134fe96c4ca6, type: 3}
-  levelNum: 1
-  maxScore: 250
+  - desiredPotionTypes: 030000000100000004000000
+    looks: {fileID: 21300000, guid: ddab4ad15455d704e806134fe96c4ca6, type: 3}
+  levelNum: 2
+  maxScore: 200

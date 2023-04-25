@@ -12,7 +12,7 @@ public struct CharacterBasics
 
 public class SpawnManager : Singleton<SpawnManager>
 {
-    public GameObject[] characterPool;
+    public GameObject[] characterPool = new GameObject[9];
     public Transform[] spawnPoints;
     public float minSpawnInterval = 1f;
     public float maxSpawnInterval = 5f;

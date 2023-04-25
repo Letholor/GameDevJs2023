@@ -15,13 +15,13 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] private bool changeToMainMenu = true;
     [SerializeField] private bool changeToCreditsMenu = false;
     [SerializeField] private bool changeToOptionsMenu = false;
-    [SerializeField] private bool changeToLoseMenu = false;
+    [SerializeField] private bool changeToGameOver = false;
     [SerializeField] private bool changeToLevelSelectMenu = false;
     [SerializeField] private string nextScene;
     [SerializeField] private GameObject mainMenuStuff;
     [SerializeField] private GameObject creditsMenuStuff;
     [SerializeField] private GameObject optionsMenuStuff;
-    [SerializeField] private GameObject loseMenuStuff;
+    [SerializeField] private GameObject GameOverStuff;
     [SerializeField] private GameObject levelSelectStuff;
 
 
@@ -39,7 +39,7 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             mainMenuStuff.SetActive(false);
             creditsMenuStuff.SetActive(true);
             optionsMenuStuff.SetActive(false);
-            loseMenuStuff.SetActive(false);
+            GameOverStuff.SetActive(false);
             levelSelectStuff.SetActive(false);
         }
         if (changeToMainMenu)
@@ -47,7 +47,7 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             mainMenuStuff.SetActive(true);
             creditsMenuStuff.SetActive(false);
             optionsMenuStuff.SetActive(false);
-            loseMenuStuff.SetActive(false);
+            GameOverStuff.SetActive(false);
             levelSelectStuff.SetActive(false);
         }
         if (changeToOptionsMenu)
@@ -55,12 +55,12 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             mainMenuStuff.SetActive(false);
             creditsMenuStuff.SetActive(false);
             optionsMenuStuff.SetActive(true);
-            loseMenuStuff.SetActive(false);
+            GameOverStuff.SetActive(false);
             levelSelectStuff.SetActive(false);
         }
-        if (changeToLoseMenu) 
+        if (changeToGameOver) 
         {
-            loseMenuStuff.SetActive(true);
+            GameOverStuff.SetActive(true);
             mainMenuStuff.SetActive(false);
             creditsMenuStuff.SetActive(false);
             optionsMenuStuff.SetActive(false);
@@ -68,7 +68,7 @@ public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         if (changeToLevelSelectMenu) 
         {
-            loseMenuStuff.SetActive(false);
+            GameOverStuff.SetActive(false);
             mainMenuStuff.SetActive(false);
             creditsMenuStuff.SetActive(false);
             optionsMenuStuff.SetActive(false);
