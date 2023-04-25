@@ -9,10 +9,10 @@ public class EndGameManager : Singleton<EndGameManager>
     public GameObject star1, star2, star3, star4, star5;
     public GameObject starGold;
     public GameObject endLevelScreen;
-    public int finalScore;
     public RotatePointer clock;
-    bool readyForNextLevel, skip;
     public AudioSource backgroundMusic, endingMusic;
+    public int finalScore;
+    bool readyForNextLevel, skip;
 
     public void EndLevel()
     {
@@ -75,7 +75,38 @@ public class EndGameManager : Singleton<EndGameManager>
     {
         if (readyForNextLevel)
         {
-            PlayerPrefs.SetInt("currLevel", LevelManager.instance.currentLevel + 1);
+            int nextLevelNum = LevelManager.instance.currentLevel + 1;
+            bool foundNextLevel = false;
+            foreach (Level lev in LevelManager.instance.allLevels)
+            {
+                if (lev.levelNum == nextLevelNum)
+                {
+                    foundNextLevel = true;
+                    break;
+                }
+            }
+            if (foundNextLevel)
+            {
+                PlayerPrefs.SetInt("currLevel", nextLevelNum);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("gameOver", 1);
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
+        else
+        {
+            skip = true;
+        }
+    }
+
+    public void ResetLevel()
+    {
+        if (readyForNextLevel)
+        {
+            PlayerPrefs.SetInt("currLevel", LevelManager.instance.currentLevel);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else

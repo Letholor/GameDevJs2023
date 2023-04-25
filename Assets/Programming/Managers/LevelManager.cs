@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -44,10 +45,6 @@ public class LevelManager : Singleton<LevelManager>
                 SpawnManager.instance.characterPool[i] = character;
                 i++;
             }
-        }
-        else
-        {
-            //gameOverScreen
         }
 
         SpawnManager.instance.startSpawning = true;
