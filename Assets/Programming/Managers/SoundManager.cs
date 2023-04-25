@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-<<<<<<< Updated upstream
     public static SoundManager Instance;
+
+    [SerializeField] private AudioSource musicSource, effectSource;
 
     private void Awake()
     {
@@ -18,17 +19,10 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-=======
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySound(AudioClip clip)
     {
-        
->>>>>>> Stashed changes
+        effectSource.PlayOneShot(clip);
     }
 }
