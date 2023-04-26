@@ -15,6 +15,11 @@ public class LevelManager : Singleton<LevelManager>
 
     private void Start()
     {
+        if (SpawnManager.instance == null)
+        {
+            Debug.LogError("SpawnManager instance is null!");
+            return;
+        }
         currentLevel = PlayerPrefs.GetInt("currLevel");
         if (currentLevel == 0)
         {
@@ -47,6 +52,6 @@ public class LevelManager : Singleton<LevelManager>
             }
         }
 
-        SpawnManager.instance.startSpawning = true;
+        SpawnManager.instance.StartCoroutine(SpawnManager.instance.SpawnCharacters());
     }
 }

@@ -23,7 +23,17 @@ public class SpawnManager : Singleton<SpawnManager>
 
     public bool startSpawning;
 
-    IEnumerator SpawnCharacters()
+    protected override void Awake()
+    {
+        base.Awake();
+        // Assign a default value to characterPool if it hasn't been assigned already
+        if (characterPool == null || characterPool.Length == 0)
+        {
+            characterPool = new GameObject[9];
+        }
+    }
+
+    public IEnumerator SpawnCharacters()
     {
         gameStart = true;
         // Loop infinitely
@@ -34,7 +44,7 @@ public class SpawnManager : Singleton<SpawnManager>
             yield return new WaitForSeconds(interval);
 
             // Only spawn a character if there's an empty slot available
-            if (availableSlots.Count > 0 & characterPool.Length > 0)
+            if (availableSlots.Count > 0)
             {
                 // Choose a random character from the pool
                 int characterIndex = Random.Range(0, characterPool.Length);
@@ -44,27 +54,56 @@ public class SpawnManager : Singleton<SpawnManager>
                 int spawnPointIndex = availableSlots[slotIndex];
 
                 // Move the character to the chosen slot if it's not already slotted
-                GameObject character = characterPool[characterIndex];
-                Character characterScript = character.GetComponent<Character>();
-                characterScript.clock.StartTimer();
-                if (characterScript.slotIndex == 0)
+                GameObject character;
+                Character characterScript;
+                lock (characterPool)
                 {
-                    characterPool = characterPool.Where((val, idx) => idx != characterIndex).ToArray();
-                    availableSlots.RemoveAt(slotIndex);
-                    character.transform.position = spawnPoints[spawnPointIndex].position;
-                    characterScript.slotIndex = spawnPointIndex;
+                    if (characterIndex < characterPool.Length && characterPool[characterIndex] != null)
+                    {
+                        character = characterPool[characterIndex];
+                        characterScript = character.GetComponent<Character>();
+                        characterScript.clock.StartTimer();
+                        if (characterScript.slotIndex == 0)
+                        {
+                            characterPool[characterIndex] = null;
+                            availableSlots.RemoveAt(slotIndex);
+                            character.transform.position = spawnPoints[spawnPointIndex].position;
+                            characterScript.slotIndex = spawnPointIndex;
+                            if (characterIndex == characterPool.Length - 1)
+                            {
+                                // Resize the array if it's not full
+                                int newLength = characterPool.Length;
+                                for (int i = characterPool.Length - 1; i >= 0; i--)
+                                {
+                                    if (characterPool[i] == null)
+                                    {
+                                        newLength--;
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
+                                }
+                                if (newLength < characterPool.Length)
+                                {
+                                    System.Array.Resize(ref characterPool, newLength);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 
+
     private void Update()
     {
-        if (startSpawning)
+        /*if (startSpawning)
         {
             startSpawning = false;
             StartCoroutine(SpawnCharacters());
-        }
+        }*/
 
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Character");
         if (objectsWithTag.Length == 0 & gameStart)
