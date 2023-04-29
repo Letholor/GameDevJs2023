@@ -13,6 +13,8 @@ public class PauseMenuStuff : MonoBehaviour
 
     public void BackToMain()
     {
+        Time.timeScale = 1;
+        AudioListener.pause = false;
         SceneManager.LoadScene("MainMenu");
     }
 

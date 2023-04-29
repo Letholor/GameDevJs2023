@@ -2317,7 +2317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Congratualtions
+  m_text: 'Congratulations
 
     you win!'
   m_isRightToLeft: 0
@@ -2890,7 +2890,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 41883400}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 3
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: c5937813c0e160840a81641599b8d5d8, type: 2}
-  parameterName: Volume
+  parameterName: SFXVolume
 --- !u!1 &918189590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,7 +3813,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 545260851}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 3
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:

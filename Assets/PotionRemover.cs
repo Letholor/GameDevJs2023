@@ -23,7 +23,6 @@ public class PotionRemover : MonoBehaviour
     private void OnMouseDown()
     {
         x.SetActive(false);
-        pottyHol.DisarmPotion();
 
         if (pottyHol.health)
         {
@@ -45,5 +44,6 @@ public class PotionRemover : MonoBehaviour
         {
             DeliverPotion.instance.readyPotions.Remove(PotionType.Polymorph);
         }
+        pottyHol.DisarmPotion();
     }
 }
